@@ -55,8 +55,9 @@ async def filter(client, message):
             for file in files:
                 file_id = file.file_id
                 filename = f"[{get_size(file.file_size)}] {file.file_name}"
+                print(file_id)
                 btn.append(
-                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"tgmoviedbbot#{file_id}")]
+                    [InlineKeyboardButton(text=f"{filename}",callback_data=f"trtechguide#{file_id}")]
                     )
         else:
             await client.send_sticker(chat_id=message.from_user.id, sticker='CAACAgUAAxkBAAEDJW1hdlBpkb5LEo253PEYNyLlIqRT8QACFwQAAirjYVaeazKnswSVICEE')
