@@ -11,11 +11,11 @@ logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd):
-    if not await db.is_user_exist(update.from_user.id):
-        await db.add_user(update.from_user.id)
+    if not await db.is_user_exist(cmd.from_user.id):
+        await db.add_user(cmd.from_user.id)
         await bot.send_message(
             LOG_CHANNEL,
-            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) Started !!"
+            f"#NEW_USER: \n\nNew User [{cmd.from_user.first_name}](tg://user?id={cmd.from_user.id}) Started !!"
         )
     usr_cmdall1 = cmd.text
     if usr_cmdall1.startswith("/start trtechguide"):
