@@ -7,7 +7,7 @@ from pyrogram.errors import UserNotParticipant
 from utils import get_filter_results, get_file_details, is_subscribed, get_poster
 BUTTONS = {}
 BOT = {}
-@Client.on_message(filters.text & filters.private & filters.incoming & filters.user(AUTH_USERS) if AUTH_USERS else filters.text & filters.private & filters.incoming)
+@Client.on_message(filters.text & filters.private & filters.incoming if AUTH_USERS else filters.text & filters.private & filters.incoming)
 async def filter(client, message):
     if message.text.startswith("/"):
         return
@@ -272,11 +272,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif query.data == "about":
             buttons = [
                 [
-                    InlineKeyboardButton('Bot Updates', url='https://t.me/SLBotsOfficial'),
-                    InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
+                    InlineKeyboardButton('Bot Updates', url='https://t.me/+1D7BAGMgGwkxYTA1')
+                    #InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
                 ]
                 ]
-            await query.message.edit(text="<b>This is a clone of [TGMOVIEDB](https://t.me/tgmoviedbbot)\nA project By @SLBotsOfficial👑\n<b>Developer : <a href='https://t.me/TharukRenuja'>Tharuk Renuja</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nSource Code : <a href='https://github.com/TharukRenuja/NSTC-Movie-Finder'>Click here</a>\nUpdate Channel : <a href='https://t.me/SLBotsOfficial'>SLBotsOfficial</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+            await query.message.edit(text="<b>Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nUpdate Channel : <a href='https://t.me/+1D7BAGMgGwkxYTA1'>updates</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
 
 
 
@@ -297,8 +297,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Bot Updates', url='https://t.me/SLBotsOfficial'),
-                        InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
+                        InlineKeyboardButton('Bot Updates', url='https://t.me/+1D7BAGMgGwkxYTA1')
+                        #InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
                     ]
                     ]
                 
@@ -329,8 +329,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     f_caption = f"{title}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Bot Updates', url='https://t.me/SLBotsOfficial'),
-                        InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
+                        InlineKeyboardButton('Bot Updates', url='https://t.me/+1D7BAGMgGwkxYTA1')
+                        #InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainment')
                     ]
                     ]
                 

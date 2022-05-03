@@ -66,8 +66,8 @@ async def start(bot, cmd):
                     f_caption = f"{files.file_name}"
                 buttons = [
                     [
-                        InlineKeyboardButton('Search again', switch_inline_query_current_chat=''),
-                        InlineKeyboardButton('More Bots', url='https://t.me/SLBotsofficial/28')
+                        InlineKeyboardButton('Search again', switch_inline_query_current_chat='')
+                        #InlineKeyboardButton('More Bots', url='https://t.me/SLBotsofficial/28')
                     ]
                 ]
                 await bot.send_cached_media(
@@ -104,10 +104,7 @@ async def start(bot, cmd):
                     ],
                     [
                         InlineKeyboardButton("About", callback_data="about"),
-                        InlineKeyboardButton("Other Bots", url="https://t.me/SLBotsofficial/28")
-                    ],
-                    [
-                        InlineKeyboardButton("➕ Add Me to your group ➕",url="t.me/tgmoviedbbot?startgroup=true")
+                        #InlineKeyboardButton("Other Bots", url="https://t.me/SLBotsofficial/28")
                     ]
                 ]
             )
@@ -212,8 +209,8 @@ async def delete(bot, message):
 async def bot_info(bot, message):
     buttons = [
         [
-            InlineKeyboardButton('Bot Update Channel', url='https://t.me/SLBotsOfficial'),
-            InlineKeyboardButton('Movie Updates', url='https://t.me/nstcentertainmentgroup')
+            #InlineKeyboardButton('Bot Update Channel', url='https://t.me/SLBotsOfficial'),
+            InlineKeyboardButton('Movie Updates', url='https://t.me/+1D7BAGMgGwkxYTA1')
         ]
     ]
-    await message.reply(text="<b>This is a clone of [TGMOVIEDB](https://t.me/tgmoviedbbot)\nDeveloper : <a href='https://t.me/TharukRenuja'>Tharuk Renuja</a>\nLanguage : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nBot Update : <a href='https://t.me/SLBotsofficial'>SLBotsOfficial</a>\nMovie Updates : <a href='https://t.me/nstcentertainment'>NSTC Entertainment</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
+    await message.reply(text="<b>Language : <code>Python3</code>\nLibrary : <a href='https://docs.pyrogram.org/'>Pyrogram asyncio</a>\nBot Update : <a href='https://t.me/+1D7BAGMgGwkxYTA1'>Channel</a> </b>", reply_markup=InlineKeyboardMarkup(buttons), disable_web_page_preview=True)
