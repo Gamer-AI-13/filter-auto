@@ -2,13 +2,21 @@ import os
 import logging
 from pyrogram import Client, filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
-from info import default_start_msg, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION
+from info import default_start_msg, CHANNELS, ADMINS, AUTH_CHANNEL, CUSTOM_FILE_CAPTION, DATABASE_URI, LOG_CHANNEL
 from utils import Media, get_file_details
 from pyrogram.errors import UserNotParticipant
+from database import Database
+db = Database(DATABASE_URI, "BOT_USERNAME")
 logger = logging.getLogger(__name__)
 
 @Client.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd):
+    if not await db.is_user_exist(update.from_user.id):
+        await db.add_user(update.from_user.id)
+        await bot.send_message(
+            LOG_CHANNEL,
+            f"#NEW_USER: \n\nNew User [{update.from_user.first_name}](tg://user?id={update.from_user.id}) Started !!"
+        )
     usr_cmdall1 = cmd.text
     if usr_cmdall1.startswith("/start trtechguide"):
         if AUTH_CHANNEL:
