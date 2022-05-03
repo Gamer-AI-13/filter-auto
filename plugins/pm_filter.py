@@ -283,9 +283,11 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         elif query.data.startswith("trtechguide"):
             ident, file_id = query.data.split("#")
+            print (file_id)
             filedetails = await get_file_details(file_id)
             for files in filedetails:
                 title = files.file_name
+                print(title)
                 size=files.file_size
                 f_caption=files.caption
                 if CUSTOM_FILE_CAPTION:
