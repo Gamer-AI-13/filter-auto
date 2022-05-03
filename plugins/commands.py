@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 @Client.on_message(filters.command("start") & filters.private)
 async def start(bot, cmd):
     usr_cmdall1 = cmd.text
-    if usr_cmdall1.startswith("/start tgmoviedbbot"):
+    if usr_cmdall1.startswith("/start trtechguide"):
         if AUTH_CHANNEL:
             invite_link = await bot.create_chat_invite_link(int(AUTH_CHANNEL))
             try:
@@ -111,7 +111,7 @@ async def start(bot, cmd):
         )
 
 @Client.on_message(filters.group & filters.command("start"))
-async def start(bot, cmd):
+async def staaart(bot, cmd):
     await cmd.reply_text(
             START_MSG,
             parse_mode="Markdown",
